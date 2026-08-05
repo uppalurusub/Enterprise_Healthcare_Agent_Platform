@@ -1,0 +1,7 @@
+Testing commands
+================
+pytest
+
+testing coverage commands
+-------------------------
+pytest app/unit_testing --cov=app --cov-report=term-missing --cov-report=html

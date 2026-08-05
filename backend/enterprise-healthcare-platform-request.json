@@ -1,0 +1,66 @@
+Sample Request 1 – Diabetes + CKD (Basic)
+{
+  "patient_case": "65-year-old male diagnosed with Type 2 Diabetes Mellitus, Stage 3 Chronic Kidney Disease, hypertension, BMI 31, HbA1c 9.2%, serum creatinine 2.1 mg/dL, eGFR 42 ml/min/1.73m². Patient reports poor medication adherence and intermittent dizziness.",
+  "objective": "Generate multidisciplinary clinical, financial, research, compliance, and executive recommendations.",
+  "additional_context": "Patient is covered under Medicare and lives alone.",
+  "require_human_review": true,
+  "session_id": "session-001"
+}
+Sample Request 2 – Heart Failure
+{
+  "patient_case": "72-year-old female admitted with acute decompensated heart failure. History of coronary artery disease, hypertension, atrial fibrillation, and chronic kidney disease. BNP 1650 pg/mL, LVEF 30%.",
+  "objective": "Provide diagnosis review, treatment recommendations, hospitalization cost analysis, guideline review, compliance assessment, and executive summary.",
+  "additional_context": "Patient has private insurance and previous hospitalization within the last six months.",
+  "require_human_review": true,
+  "session_id": "HF-2026-001"
+}
+Sample Request 3 – Oncology
+{
+  "patient_case": "58-year-old female diagnosed with Stage II breast cancer. Completed surgery and is being evaluated for adjuvant chemotherapy. HER2 positive, ER positive, PR positive.",
+  "objective": "Recommend evidence-based treatment, estimate treatment costs, identify relevant clinical trials, verify compliance, and summarize for executive review.",
+  "additional_context": "Hospital participates in multiple oncology clinical trials.",
+  "require_human_review": false,
+  "session_id": "ONC-001"
+}
+Sample Request 4 – Emergency Department
+{
+  "patient_case": "45-year-old male presented to the emergency department with chest pain radiating to the left arm, elevated troponin, ST elevation on ECG, and a history of smoking and hypertension.",
+  "objective": "Generate multidisciplinary recommendations including emergency clinical care, cost estimation, research evidence, compliance review, and executive decision support.",
+  "additional_context": "Primary PCI performed successfully.",
+  "require_human_review": true,
+  "session_id": "ED-001"
+}
+Sample Request 5 – Population Health
+{
+  "patient_case": "A hospital wants to analyze 10,000 diabetic patients to identify high-risk populations, estimate treatment costs, assess regulatory compliance, and generate executive recommendations.",
+  "objective": "Perform enterprise-level healthcare analysis.",
+  "additional_context": "Population health initiative for fiscal year 2026.",
+  "require_human_review": false,
+  "session_id": "PHM-001"
+}
+Sample Request 6 – ICU Patient
+{
+  "patient_case": "68-year-old male admitted to ICU with severe sepsis secondary to pneumonia. Blood pressure 82/48 mmHg, lactate 5.2 mmol/L, WBC 24,000/µL, requiring vasopressors and mechanical ventilation.",
+  "objective": "Provide ICU management recommendations, estimate treatment costs, review current sepsis guidelines, perform compliance assessment, and prepare an executive summary.",
+  "additional_context": "Hospital follows Surviving Sepsis Campaign protocols.",
+  "require_human_review": true,
+  "session_id": "ICU-001"
+}
+Sample Request 7 – Clinical Trial
+{
+  "patient_case": "A Phase III oncology clinical trial requires evaluation of patient eligibility, protocol compliance, budget estimation, regulatory review, and executive oversight.",
+  "objective": "Analyze the clinical trial scenario from multidisciplinary perspectives.",
+  "additional_context": "Study is conducted across five participating hospitals.",
+  "require_human_review": true,
+  "session_id": "CTMS-001"
+}
+Sample cURL Request
+curl -X POST "http://localhost:8000/api/v1/agents/enterprise-healthcare-platform" \
+-H "Content-Type: application/json" \
+-d '{
+  "patient_case":"65-year-old male with Type 2 Diabetes, Stage 3 CKD, Hypertension, and elevated HbA1c.",
+  "objective":"Generate multidisciplinary clinical, financial, research, compliance, and executive recommendations.",
+  "additional_context":"Patient has Medicare coverage and history of medication non-adherence.",
+  "require_human_review":true,
+  "session_id":"session-001"
+}'
