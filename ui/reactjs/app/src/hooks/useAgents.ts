@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { getAgents } from "../api/healthcareApi";
 
-
 export interface Agent {
 
     name:string;
