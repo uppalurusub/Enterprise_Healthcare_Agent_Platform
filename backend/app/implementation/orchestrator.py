@@ -13,7 +13,8 @@ import asyncio
 import time
 from typing import Dict
 
-from app.utils.logger import logger
+from app.config.settings import settings 
+logger = settings.get_logger()
 
 from app.agents.clinical_agent import ClinicalAgent
 from app.agents.financial_agent import FinancialAgent

@@ -22,7 +22,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from app.utils.logger import logger
+from app.config.settings import settings 
+logger = settings.get_logger()
 
 from app.router.healthcare_router import router
 

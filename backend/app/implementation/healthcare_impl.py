@@ -28,14 +28,15 @@ import time
 from datetime import datetime, timezone
 from typing import Optional
 
-from app.utils.logger import logger
+from app.config.settings import settings 
+logger = settings.get_logger()
 
 from app.implementation.orchestrator import HealthcareOrchestrator
 from app.implementation.human_review import HumanReviewer
 
-from app.models.request_model import HealthcareRequest
+from app.schemas.request_model import HealthcareRequest
 
-from app.models.response_model import (
+from app.schemas.response_model import (
     AgentResponse,
     HealthcareResponse,
     HumanReview,

@@ -12,12 +12,13 @@ from __future__ import annotations
 import time
 from typing import Dict
 
-from app.utils.logger import logger
+from app.config.settings import settings 
+logger = settings.get_logger()
 
 from autogen_agentchat.agents import AssistantAgent
 from autogen_ext.models.openai import OpenAIChatCompletionClient
 
-from app.config.llm_config import get_model_client
+
 from app.prompts.finance_prompt import FinancePrompt
 
 
@@ -39,7 +40,7 @@ class FinancialAgent:
 
         logger.info("Initializing Financial Agent...")
 
-        self.model_client = get_model_client()
+        self.model_client = settings.get_model_client()
 
         self.agent = AssistantAgent(
             name="FinancialAgent",

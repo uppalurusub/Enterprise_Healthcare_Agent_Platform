@@ -15,10 +15,11 @@ Responsibilities
 from fastapi import APIRouter, HTTPException, status
 from fastapi.responses import JSONResponse
 
-from app.models.request_model import HealthcareRequest
+from app.schemas.request_model import HealthcareRequest
 from app.services.healthcare_service import HealthcareService
 from app.utils.helper import Helper
-from app.utils.logger import logger
+from app.config.settings import settings 
+logger = settings.get_logger()
 
 
 

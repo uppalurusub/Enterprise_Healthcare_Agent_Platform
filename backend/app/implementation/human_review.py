@@ -12,7 +12,8 @@ from __future__ import annotations
 import time
 from typing import Dict, Optional
 
-from app.utils.logger import logger
+from app.config.settings import settings 
+logger = settings.get_logger()
 
 
 class HumanReviewer:
